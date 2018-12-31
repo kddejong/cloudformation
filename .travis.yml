@@ -1,0 +1,12 @@
+language: python
+sudo: true
+dist: xenial
+stages:
+- Lint
+jobs:
+  include:
+  - stage: Lint
+    python: 3.6
+    script: cfn-lint **/*.yaml
+install:
+- pip install cfn-lint
