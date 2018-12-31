@@ -414,7 +414,7 @@ Resources:
               StackName: !Sub "${ApplicationName}-${ApplicationRole}-ASG"
               Capabilities: CAPABILITY_NAMED_IAM
               TemplatePath: Build::cfn-asg-env.yaml
-              TemplateConfiguration: Build::cloudformation.cfn.config
+              TemplateConfiguration: !Sub "Build::cloudformation.cfn.config"
               RoleArn: !GetAtt CFNRole.Arn
               ParameterOverrides: !Sub |
                 {
